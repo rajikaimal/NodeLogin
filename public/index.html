@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="NodeLogin">
+<head>
+	<script src="angular.min.js"></script>
+	<script src="angular-route.js"></script>
+	<script src="controllers/controller.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<title>NodeJs-Login</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Customizable login using Node.JS</h1>
+		<div class="container" ng-controller="loginCtrl">
+			<input type="text" class="form-control" placeholder="Username" ng-model="login.username"/>
+			<hr/>
+			<input type="password" class="form-control" placeholder="Password" ng-model="login.password"/>
+			<hr/>
+			<button class="btn btn-primary" ng-click="validate()">Login</button>	
+		</div>
+	</div>
+</body>
+</html>
