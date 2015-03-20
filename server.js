@@ -1,20 +1,27 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('logininfo',['logininfo']);
-
+var db = mongojs('logininfo',['logininfo']); //mongodb and collection name - logininfo
+var bodyParser = require('body-parser');
 app.use(express.static(__dirname + '/public'));
-
-app.get('/login',function(req,res){
+app.use(bodyParser.json());
+app.get('/home',function(req,res){
 	console.log('I recieved a get request');
-	db.logininfo.find(function(err,docs){
-		console.log(docs);
-
-	});
 });
 
 app.post('/login',function(req,res){
-	console.log(req.body);
+	console.log(req.body.username);
+	console.log(req.body.password);
+	var Username = req.body.username;
+	var Password = req.body.password;
+	db.logininfo.find({ username : Username },{ password : Password},function(err,logininfo){
+		if(err || !logininfo)
+			res.send("Invalid combination");
+		else{
+			console.log('Logged');
+			res.redirect(302,'/home');
+		}
+	});
 });
 
 app.listen(3000);
