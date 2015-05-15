@@ -1,5 +1,5 @@
 # NodeLogin
-A Simple login module deployed using NodeJs,AngularJs,MongoDB
+A Simple login module deployed using MEAN stack
 
 To deploy 
 git clone https://github.com/xoRajika/NodeLogin
