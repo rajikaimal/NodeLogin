@@ -2,7 +2,7 @@
 A Simple login module deployed using MEAN stack
 
 To deploy 
-git clone https://github.com/xoRajika/NodeLogin
-cd NodeLogin 
-npm install 
-node server
+<p>git clone https://github.com/xoRajika/NodeLogin</p>
+<p>cd NodeLogin </p>
+<p>npm install </p> 
+<p>node server </p>
