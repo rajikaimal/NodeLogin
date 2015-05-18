@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Node login",
   "dependencies": {
-    "express": "^4.10.2",
-    "mysql": "0.9"
+    "express": "^4.10.2"
   }
 }

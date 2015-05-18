@@ -28,6 +28,7 @@ app.post('/login',function(req,res){
 		if(!err){
 			if(Username == rows[0]['username'] && Password == rows[0]['password']){
 				console.log('Logged in ');
+				res.redirect('/home');
 			}
 			else{
 				console.log('Invalid combination');
@@ -36,6 +37,7 @@ app.post('/login',function(req,res){
 		else{
 			console.log('Oops something went wrong');
 		}
+		connection.end();
 	});
 
 });
